@@ -1,0 +1,12 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/BluePrints/BP_Billiard_Table.uasset"
+			]
+		}
+	]
+}
