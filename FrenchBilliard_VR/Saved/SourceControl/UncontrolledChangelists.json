@@ -5,7 +5,13 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/BluePrints/BP_Billiard_Table.uasset"
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/BluePrints/BP_Billiard_Table.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/VRTemplate/Maps/VRTemplateMap.umap",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/EXTERIORfRAME.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/FRameBillarTAble.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/LEGbILLARtABLE.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/tOPtABLE_BILLAR.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/Material/M_GreenTop.uasset"
 			]
 		}
 	]
