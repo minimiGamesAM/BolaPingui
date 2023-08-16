@@ -11,7 +11,14 @@
 				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/FRameBillarTAble.uasset",
 				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/LEGbILLARtABLE.uasset",
 				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/tOPtABLE_BILLAR.uasset",
-				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/Material/M_GreenTop.uasset"
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/Material/M_GreenTop.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/VRTemplate/Blueprints/Projectile.uasset",
+				"C:/Program Files/Epic Games/UE_5.1/Engine/Content/VREditor/BasicMeshes/MI_Ball_01.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/Balls/BP_BALL.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/Material/M_BallMaterial.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/BillarBAll.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/Billiard_Table/fbx_mesh/Default_OBJ.uasset",
+				"E:/Unreal/Projects_2023/French_BillarVR/Unreal/BolaPingui/FrenchBilliard_VR/Content/VRTemplate/Maps/VRTemplateMap_BuiltData.uasset"
 			]
 		}
 	]
