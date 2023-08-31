@@ -1,0 +1,10 @@
+{
+	"SourceFiles": [
+		"E:\\Unreal\\Projects_2023\\French_BillarVR\\Unreal\\BolaPingui\\FrenchBilliard_VR\\Source\\FrenchBilliard_VR\\FrenchBilliard_VR.Build.cs",
+		"E:\\Unreal\\Projects_2023\\French_BillarVR\\Unreal\\BolaPingui\\FrenchBilliard_VR\\Intermediate\\Source\\FrenchBilliard_VR.Build.cs",
+		"E:\\Unreal\\Projects_2023\\French_BillarVR\\Unreal\\BolaPingui\\FrenchBilliard_VR\\Source\\FrenchBilliard_VR.Target.cs",
+		"E:\\Unreal\\Projects_2023\\French_BillarVR\\Unreal\\BolaPingui\\FrenchBilliard_VR\\Source\\FrenchBilliard_VREditor.Target.cs",
+		"E:\\Unreal\\Projects_2023\\French_BillarVR\\Unreal\\BolaPingui\\FrenchBilliard_VR\\Intermediate\\Source\\FrenchBilliard_VR.Target.cs"
+	],
+	"EngineVersion": "5.1.1"
+}

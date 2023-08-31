@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\unreal\\projects_2023\\french_billarvr\\unreal\\bolapingui\\frenchbilliard_vr\\intermediate\\source\\frenchbilliard_vr.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal\\projects_2023\\french_billarvr\\unreal\\bolapingui\\frenchbilliard_vr\\intermediate\\build\\win64\\frenchbilliard_vr\\development\\core\\sharedpch.core.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "e:\\unreal\\projects_2023\\french_billarvr\\unreal\\bolapingui\\frenchbilliard_vr\\intermediate\\build\\win64\\unrealgame\\development\\frenchbilliard_vr\\definitions.frenchbilliard_vr.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
