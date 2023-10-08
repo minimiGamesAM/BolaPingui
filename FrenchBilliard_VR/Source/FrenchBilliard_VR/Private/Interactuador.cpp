@@ -2,12 +2,16 @@
 
 
 #include "Interactuador.h"
+#include "InteractComponent.h"
+#include "Camera/CameraComponent.h"
 
 // Sets default values
 AInteractuador::AInteractuador()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+    InteractComp = CreateDefaultSubobject<UInteractComponent>("InteractComp");
 
 }
 
@@ -16,6 +20,13 @@ void AInteractuador::BeginPlay()
 {
 	Super::BeginPlay();
 	
+}
+
+void AInteractuador::PostInitializeComponents()
+{
+    Super::PostInitializeComponents();
+
+    CameraComp = FindComponentByClass<UCameraComponent>();
 }
 
 // Called every frame
@@ -37,6 +48,8 @@ void AInteractuador::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
     PlayerInputComponent->BindAxis("Girar", this, &AInteractuador::AddControllerYawInput);
     PlayerInputComponent->BindAxis("Mirar", this, &AInteractuador::AddControllerPitchInput);
+
+    PlayerInputComponent->BindAction("Pick", IE_Pressed, this, &AInteractuador::PickObject);
 
 }
 
@@ -65,6 +78,22 @@ void AInteractuador::MoverLados(float Val)
             // transform to world space and add it
             AddMovementInput(FRotationMatrix(ControlSpaceRot).GetScaledAxis(EAxis::Y), Val);
         }
+    }
+}
+
+FVector AInteractuador::GetPawnViewLocation() const
+{
+    return CameraComp->GetComponentLocation();
+}
+
+void AInteractuador::PickObject()
+{
+    if (InteractComp->BeginDrag())
+    {
+        //if (CameraComp)
+        //{
+        //    CameraComp->bUsePawnControlRotation = false;
+        //}
     }
 }
 
