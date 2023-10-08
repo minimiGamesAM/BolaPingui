@@ -18,13 +18,18 @@ public:
 
 	bool BeginDrag();
 
+	void ApplyImpulse();
 	//UFUNCTION(BlueprintCallable, Category = "PhysicsComp")
 	//static UPhysicsHandleComponent* GetPhysicsHandleComp(AActor* FromActor);
 
+	UPROPERTY(EditAnywhere)
+	float ImpulseMagnitud = 10.0f;
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+	bool CastObjects(FHitResult* HitResult, FVector& Direction);
 
 public:	
 	// Called every frame

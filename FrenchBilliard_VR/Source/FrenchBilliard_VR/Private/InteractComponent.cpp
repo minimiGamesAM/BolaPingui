@@ -13,18 +13,9 @@ UInteractComponent::UInteractComponent()
 	// ...
 }
 
-bool UInteractComponent::BeginDrag()
+bool UInteractComponent::CastObjects(FHitResult* HitResult, FVector& Direction)
 {
 	AActor* MyOwner = GetOwner();
-
-	FVector LocalPos;
-	FQuat4d LocalRot;
-	//UPhysicsHandleComponent* PhysHandleComp = GetPhysicsHandleComp(MyOwner);
-
-	//if (!PhysHandleComp)
-	//{
-	//	return false;
-	//}
 
 	FCollisionObjectQueryParams ObjectQueryParams;
 	ObjectQueryParams.AddObjectTypesToQuery(ECC_PhysicsBody);
@@ -36,18 +27,11 @@ bool UInteractComponent::BeginDrag()
 
 	FVector End(EyeLocation + (EyeRotation.Vector() * 500.0f));
 
-	//FHitResult Hit;
-	//bool bBlocking = GetWorld()->LineTraceSingleByObjectType(Hit, EyeLocation, End, ObjectQueryParams);
-
-	//FHitResult Hit;	
-	//bool bBlocking = GetWorld()->LineTraceSingleByObjectType(Hit, EyeLocation, End, ObjectQueryParams);
-	
 	TArray<FHitResult> Hits;
 	float Radius = 1.0f;
 	FCollisionShape Shape;
 	Shape.SetSphere(Radius);
 	bool bBlocking = GetWorld()->SweepMultiByObjectType(Hits, EyeLocation, End, FQuat::Identity, ObjectQueryParams, Shape);
-
 
 	FColor LineColor = bBlocking ? FColor::Green : FColor::Red;
 
@@ -56,37 +40,42 @@ bool UInteractComponent::BeginDrag()
 		AActor* HitActor = Hit.GetActor();
 		if (HitActor)
 		{
+			Direction = EyeRotation.Vector();
+
+			if (HitResult)
+			{
+				*HitResult = Hit;
+			}
+			
 			End = Hit.ImpactPoint;
-	
-			//OnGrabObject.Broadcast(nullptr, Hit.GetComponent(), Hit.ImpactPoint);
-	
-			//LocalRot = MyOwner->GetTransform().InverseTransformRotation(Hit.GetActor()->GetActorRotation().Quaternion());
-			//LocalPos = MyOwner->GetTransform().InverseTransformPosition(Hit.ImpactPoint);
-	
-			//PhysHandleComp->GrabComponentAtLocationWithRotation(Hit.GetComponent(),
-			//	Hit.BoneName,
-			//	Hit.ImpactPoint,
-			//	Hit.GetActor()->GetActorRotation());
-			//
-	
-			//if (AMG_TuboSkeleton* tt = Cast<AMG_TuboSkeleton>(HitActor))
-			//{
-			//	tt->InsertTubo(5.0f);
-			//}
-	
-			//break;
+			break;
 		}
 	}
 
-	//Radius = 3.0f;
 	DrawDebugSphere(GetWorld(), End, Radius, 32, LineColor, false, 0.0f);
-	//DrawDebugLine(GetWorld(), EyeLocation, End, LineColor, false, 0.0f);
-
-	//PossesObject = bBlocking;
 
 	return bBlocking;
 }
 
+bool UInteractComponent::BeginDrag()
+{
+	FVector Direction;
+	FHitResult HitResult;
+
+	return CastObjects(nullptr, Direction);
+}
+
+void UInteractComponent::ApplyImpulse()
+{
+	FVector Direction;
+	FHitResult HitResult;
+
+	if (CastObjects(&HitResult, Direction))
+	{
+		UPrimitiveComponent* HitComp = HitResult.GetComponent();
+		HitComp->AddImpulseAtLocation(Direction * ImpulseMagnitud, HitResult.ImpactPoint);
+	}
+}
 
 // Called when the game starts
 void UInteractComponent::BeginPlay()
@@ -102,6 +91,7 @@ void UInteractComponent::BeginPlay()
 void UInteractComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
 	BeginDrag();
 	// ...
 }

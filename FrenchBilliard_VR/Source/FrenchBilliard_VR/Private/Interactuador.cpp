@@ -88,12 +88,6 @@ FVector AInteractuador::GetPawnViewLocation() const
 
 void AInteractuador::PickObject()
 {
-    if (InteractComp->BeginDrag())
-    {
-        //if (CameraComp)
-        //{
-        //    CameraComp->bUsePawnControlRotation = false;
-        //}
-    }
+    InteractComp->ApplyImpulse();
 }
 
